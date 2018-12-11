@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1544571336 source:f:\github\c-\templatecontainer\main.cpp
+	"Container.h"
+	<iostream>
+	<cstddef>
+
+1544570290 source:f:\github\c-\templatecontainer\src\container.cpp
+	"Container.h"
+
+1544571608 f:\github\c-\templatecontainer\include\container.h
+	<iostream>
+
