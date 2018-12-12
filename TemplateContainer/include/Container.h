@@ -14,11 +14,13 @@ class Container
 		};
 		Node* head_Pointer;
 	public:
-		Container() {head_Pointer = NULL;}
-		~Container();
-		void set_Element(AR);
-		void delete_Element(AR);
-		void display();
+		Container() {head_Pointer = NULL;}//constructor
+		~Container();//destructor
+		void set_Element(AR);//function to add element to back of list
+		void delete_Element(AR);//function to delete specific element
+		void display();//display all the data in the list
+		AR get_Element(int);//funtion to get the element at particular position
+		int get_Size();
 };
 
 template<class AR>
@@ -76,6 +78,33 @@ void Container<AR> :: display(){
 		temp_Pointer = temp_Pointer->next_Pointer;
     }
     cout<<endl;
+}
+
+template<class AR>
+AR Container<AR> :: get_Element(int position){
+    Node* temp_Pointer = head_Pointer;
+    int count = 0;
+    while(temp_Pointer && count < position){
+		temp_Pointer = temp_Pointer->next_Pointer;
+		count++;
+    }
+    if(temp_Pointer && count == position)
+		return temp_Pointer->data;
+}
+
+template<class AR>
+int Container<AR> :: get_Size(){
+	if(head_Pointer != nullptr){
+		Node* temp_Pointer = head_Pointer;
+		int size = 0;
+		while(temp_Pointer){
+			temp_Pointer = temp_Pointer->next_Pointer;
+			++size;
+		}
+		return size;
+	}
+	else
+		return 0;
 }
 
 
